@@ -19,3 +19,18 @@ public class Main {
         
     }
 }
+
+
+
+ // program 2  -> lambda
+       Stream.of(1,2,3,4,5,6,7,8,9).forEach(new Consumer<>(){
+           @Override
+           public void accept(Integer num) {
+               System.out.println(num);
+           }
+       });
+       
+       
+        Stream.of(1,2,3,4,5,6,7,8,9).forEach((num) -> {
+           System.out.println(num);
+       });
