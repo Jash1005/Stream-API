@@ -31,3 +31,11 @@ public class Main {
             .forEach(consumer);
     }
 }
+
+
+
+   // program 1 -> writing using lambda
+       
+       Stream<String> streamOfString = Stream.generate(() -> "hello Stream!!");
+       
+       streamOfString.limit(10).forEach((str) -> System.out.println(str));
