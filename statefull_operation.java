@@ -28,6 +28,34 @@ public class Main {
              
       // filter doesnot need to store data so it is stateless operation
       
+		Stream.of(1,2,3,4,5,6,7,8,9)
+		      .filter(integer -> integer < 8)
+		      .map(num -> num * num)
+		      .forEach(integer -> System.out.println(integer));
+		      
+		// filter is stateless value
+		      
+        // using takewhile -> short - circuiting stateful
+        // the moment it doesnot satisfy condition than it will break it down pipeline
         
+        Stream.of(1,2,3,4,5,6,7,8,9)
+		      .takeWhile(integer -> integer < 8)
+		      .map(num -> num * num)
+		      .forEach(integer -> System.out.println(integer));
+        
+        
+        Stream.of("joe","abhilash","param","ansh","jash","tejal","Prachi")
+              .skip(3)
+              .forEach(str -> System.out.println(str));
+        
+        System.out.println("------------DISTICT------------------");   
+              
+        Stream.of(1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7)
+              .distinct() // stateful method
+              .forEach(num -> System.out.println(num));
+        
+	}
+}
+
     }
 }
